@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pending-demo-data
+  namespace: sre-lab-003
+
+spec:
+  accessModes:
+    - ReadWriteOnce
+
+  resources:
+    requests:
+      storage: 1Gi
+
+#Given that the nonexistent storage class is commented out, the PVC will use the default storage class.
+  storageClassName: nonexistent-storage-class
+
+#PVC will use the local-path storage class by default
+  # storageClassName: standard

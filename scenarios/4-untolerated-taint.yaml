@@ -1,0 +1,16 @@
+# This scenario demonstrates a pod with an untolerated taint, causing it to remain pending.
+spec:
+  template:
+    metadata:
+      annotations:
+        lab-scenario: "untolerated-taint"
+
+#This is the actual toleration configuration for the pod
+# spec:
+#   template:
+#     spec:
+#       tolerations:
+#         - key: workload
+#           operator: Equal
+#           value: restricted
+#           effect: NoSchedule

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pending-demo
+  namespace: sre-lab-003
+
+spec:
+  selector:
+    app: pending-demo
+
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+
+  type: ClusterIP
